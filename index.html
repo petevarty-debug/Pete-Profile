@@ -1,0 +1,285 @@
+<!--
+    ==============================================
+    PETE'S PERSONAL PROFILE WEBSITE
+    ==============================================
+    This is a modern, responsive profile page with:
+    - A beautiful hero background image
+    - Dark/Light mode toggle
+    - Animated floating orbs
+    - Project showcase cards
+    - Learning path section
+    ==============================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- 
+        THE HEAD SECTION
+        ================
+        This section contains important information ABOUT the page
+        that doesn't appear on the page itself. Think of it as the
+        "settings" or "metadata" for your webpage.
+    -->
+
+    <!-- Character encoding: tells the browser how to read special characters -->
+    <meta charset="UTF-8">
+
+    <!-- Viewport: makes the page look good on phones and tablets -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Description: what search engines (like Google) show about your page -->
+    <meta name="description"
+        content="Pete - Aspiring Developer passionate about learning new tech and exploring Antigravity">
+
+    <!-- Title: what shows up in the browser tab -->
+    <title>Pete | Aspiring Developer</title>
+
+    <!-- 
+        FONTS FROM GOOGLE
+        =================
+        These links load custom fonts from Google Fonts.
+        - "Inter" is used for normal text (body text)
+        - "Space Grotesk" is used for titles and headings
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Link to our external CSS file (contains all the styling/colors/layouts) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- 
+        THE BODY SECTION
+        ================
+        Everything inside <body> appears on the actual webpage.
+        This is what visitors see and interact with.
+    -->
+
+    <!-- 
+        THEME TOGGLE BUTTON (Dark/Light Mode Switch)
+        =============================================
+        This button stays fixed in the top-right corner.
+        When clicked, it switches between dark mode (🌙) and light mode (☀️).
+        The JavaScript file (script.js) makes this button work!
+    -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <!-- The moon/sun emoji that changes when you click -->
+        <span class="theme-toggle-icon" id="themeIcon">🌙</span>
+        <!-- The text "Toggle Theme" (hidden on mobile to save space) -->
+        <span class="theme-toggle-text">Toggle Theme</span>
+    </button>
+
+    <!-- 
+        HERO SECTION (The full-screen background area)
+        ===============================================
+        This is the large, full-screen area with the background image.
+        "Hero" is a web design term for a big, eye-catching section
+        at the top of a page.
+    -->
+    <div class="hero-section">
+        <!-- 
+            HERO OVERLAY
+            ============
+            This is a semi-transparent colored layer on top of the
+            background image. It makes the text easier to read and
+            changes color based on dark/light mode.
+        -->
+        <div class="hero-overlay"></div>
+
+        <!-- 
+            ANIMATED BACKGROUND ORBS
+            ========================
+            These are the floating, glowing circles in the background.
+            They slowly move around and react to your mouse movement!
+            You can't click on them (pointer-events: none in CSS).
+        -->
+        <div class="bg-decoration">
+            <div class="floating-orb orb-1"></div>
+            <div class="floating-orb orb-2"></div>
+            <div class="floating-orb orb-3"></div>
+        </div>
+
+        <!-- 
+            MAIN CONTAINER
+            ==============
+            This holds all the actual content and centers it on the page.
+        -->
+        <div class="container">
+            <!-- 
+                PROFILE CARD (The frosted-glass card in the center)
+                ===================================================
+                This is the main white/dark card that contains all the
+                information. It has a "glassmorphism" effect - that cool
+                frosted glass look!
+            -->
+            <div class="profile-card">
+                <!-- 
+                    HEADER SECTION
+                    ==============
+                    Contains the avatar (the "P" circle), name, job title,
+                    and contact button.
+                -->
+                <div class="header">
+                    <!-- Avatar: The circular "P" with a spinning ring around it -->
+                    <div class="avatar-container">
+                        <div class="avatar-ring"></div>
+                        <div class="avatar">P</div>
+                    </div>
+
+                    <!-- Main heading: the name "Pete" -->
+                    <h1>Pete</h1>
+
+                    <!-- Job title/occupation -->
+                    <p class="occupation">Aspiring Developer</p>
+
+                    <!-- 
+                        CONTACT BUTTON
+                        ==============
+                        When clicked, opens the user's email program with
+                        a pre-filled email to petevarty@gmail.com
+                    -->
+                    <div class="contact-btn-container">
+                        <a href="mailto:petevarty@gmail.com?subject=Inquiry%20from%20your%20website"
+                            class="contact-btn">
+                            <span>Contact Me</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Divider: A decorative line to separate sections -->
+                <div class="divider"></div>
+
+                <!-- 
+                    HOBBIES & INTERESTS SECTION
+                    ===========================
+                    Shows hobby cards with icons and descriptions.
+                    When you hover over them, they lift up and glow!
+                -->
+                <div class="content">
+                    <h2 class="section-title">Hobbies & Interests</h2>
+                    <div class="hobbies-list">
+                        <!-- First hobby card -->
+                        <div class="hobby-card">
+                            <div class="hobby-icon">💻</div>
+                            <p class="hobby-text">Learning new tech and staying up-to-date with the latest development
+                                trends</p>
+                        </div>
+                        <!-- Second hobby card -->
+                        <div class="hobby-card">
+                            <div class="hobby-icon">🚀</div>
+                            <p class="hobby-text">Exploring Antigravity and discovering innovative solutions</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 
+                    FUTURE PROJECTS SECTION
+                    =======================
+                    A grid of three project cards showing future project ideas.
+                    On desktop: 3 columns side-by-side
+                    On tablet: 2 columns
+                    On mobile: 1 column (stacked)
+                -->
+                <div class="projects-section">
+                    <h2 class="section-title">Future Projects</h2>
+                    <div class="projects-grid">
+                        <!-- Project Card 1: AI Garden Assistant -->
+                        <div class="project-card">
+                            <div class="project-icon">🌱</div>
+                            <h3 class="project-title">AI Garden Assistant</h3>
+                            <p class="project-description">Smart plant care with automated watering and health
+                                monitoring using IoT sensors.</p>
+                        </div>
+                        <!-- Project Card 2: Smart Budgeter -->
+                        <div class="project-card">
+                            <div class="project-icon">💰</div>
+                            <h3 class="project-title">Smart Budgeter</h3>
+                            <p class="project-description">Personal finance tracker with AI-powered expense predictions
+                                and savings goals.</p>
+                        </div>
+                        <!-- Project Card 3: CodeSync Mentor -->
+                        <div class="project-card">
+                            <div class="project-icon">👨‍💻</div>
+                            <h3 class="project-title">CodeSync Mentor</h3>
+                            <p class="project-description">Interactive coding tutor that adapts to your learning style
+                                with real-time feedback.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 
+                    MY LEARNING PATH SECTION
+                    ========================
+                    Shows a list of Python libraries being learned.
+                    Each library card has an icon, name, and description.
+                    When you hover, the cards slide to the right!
+                -->
+                <div class="learning-section">
+                    <h2 class="section-title">My Learning Path</h2>
+                    <ul class="learning-list">
+                        <!-- Library 1: Pandas -->
+                        <li class="library-card">
+                            <div class="library-icon">🐼</div>
+                            <div class="library-content">
+                                <h3 class="library-name">Pandas</h3>
+                                <p class="library-description">Your go-to tool for working with data tables, making it
+                                    easy to clean, analyze, and visualize information like a powerful spreadsheet on
+                                    steroids.</p>
+                            </div>
+                        </li>
+                        <!-- Library 2: Requests -->
+                        <li class="library-card">
+                            <div class="library-icon">🌐</div>
+                            <div class="library-content">
+                                <h3 class="library-name">Requests</h3>
+                                <p class="library-description">The simplest way to fetch data from websites and APIs,
+                                    letting you grab information from the web with just a few lines of code.</p>
+                            </div>
+                        </li>
+                        <!-- Library 3: FastAPI -->
+                        <li class="library-card">
+                            <div class="library-icon">⚡</div>
+                            <div class="library-content">
+                                <h3 class="library-name">FastAPI</h3>
+                                <p class="library-description">A modern, lightning-fast framework for building web
+                                    applications and APIs quickly, with automatic documentation and easy-to-learn
+                                    syntax.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 
+                    FOOTER SECTION
+                    ==============
+                    A simple "Thanks for visiting!" message with a waving hand.
+                    The hand has a cute wiggle animation!
+                -->
+                <div class="footer">
+                    <p class="footer-text">
+                        Thanks for visiting! <span class="wave">👋</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 
+        JAVASCRIPT FILE
+        ===============
+        This loads the JavaScript code that makes the page interactive:
+        - Theme toggle button functionality
+        - Parallax effects (moving orbs)
+        - Hover animations
+        Think of JavaScript as the "brain" that makes things move and respond!
+    -->
+    <script src="script.js"></script>
+</body>
+
+</html>
